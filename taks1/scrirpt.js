@@ -1,9 +1,9 @@
 const liElement = document.createElement('li');
 
-const liContent = document.createTextNode('これです');
+const textNode = document.createTextNode('これです');
 
-liElement.appendChild(liContent);
+liElement.appendChild(textNode);
 
-const ulElement = document.getElementById('ul');
+const ulElement = document.getElementById('js-ul');
 
 ulElement.appendChild(liElement);
