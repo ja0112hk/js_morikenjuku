@@ -1,3 +1,4 @@
+const ul = document.getElementById('js-ul');
 const li = document.createElement('li');
 
 const a = document.createElement('a');
@@ -8,12 +9,4 @@ const img = document.createElement('img');
 img.src = 'bookmark.png';
 img.alt = 'ブックマーク';
 
-// a.appendChild(img);
-a.insertAdjacentElement('afterbegin', img);
-
-// li.appendChild(a);
-li.insertAdjacentElement('afterbegin', a);
-
-const ul = document.getElementById('js-ul');
-
-ul.appendChild(li);
+ul.appendChild(li).appendChild(a).insertAdjacentElement('afterbegin', img);
