@@ -1,17 +1,19 @@
-const liElement = document.createElement('li');
+const li = document.createElement('li');
 
-const anchorElement = document.createElement('a');
-anchorElement.setAttribute('href', '1.html');
-anchorElement.textContent = 'これです';
+const a = document.createElement('a');
+a.href = '1.html';
+a.textContent = 'これです';
 
-const bookmarkImg = document.createElement('img');
-bookmarkImg.setAttribute('src', 'bookmark.png');
-bookmarkImg.setAttribute('alt', 'ブックマーク');
+const img = document.createElement('img');
+img.src = 'bookmark.png';
+img.alt = 'ブックマーク';
 
-anchorElement.appendChild(bookmarkImg);
+// a.appendChild(img);
+a.insertAdjacentElement('afterbegin', img);
 
-liElement.appendChild(anchorElement);
+// li.appendChild(a);
+li.insertAdjacentElement('afterbegin', a);
 
-const ulElement = document.getElementById('js-ul');
+const ul = document.getElementById('js-ul');
 
-ulElement.appendChild(liElement);
+ul.appendChild(li);
