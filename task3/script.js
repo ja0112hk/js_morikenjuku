@@ -11,5 +11,5 @@ for (let i =1; i <=2; i++) {
     ul.appendChild(li).appendChild(a).insertAdjacentElement('afterbegin', img);
 }
 
-const firstChild = ul.firstChild;
-
+ul.firstChild.querySelector('img').src = "/img/bookmark.png";
+ul.lastChild.querySelector('img').src = "/img/message.png";
