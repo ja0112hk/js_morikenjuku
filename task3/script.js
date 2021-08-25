@@ -1,8 +1,7 @@
 const ul = document.getElementById('ul');
-const liLength = 2;
 const data = ["bookmark.png", "message.png"];
 
-for (let i =1; i <= liLength; i++) {
+for (let i =1; i <= data.length; i++) {
     const li =document.createElement('li');
     const a =document.createElement('a');
     const img =document.createElement('img');
