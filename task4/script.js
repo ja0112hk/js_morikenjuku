@@ -1,6 +1,8 @@
+const df = document.createDocumentFragment();
+
 const ul = document.getElementById('ul');
 
-const array = [{
+const listItem = [{
     to: "bookmark.html",
     img: "1.png", 
     alt:"画像1",
@@ -13,17 +15,19 @@ const array = [{
     text: "メッセージ"
 }];
 
-for (let i =0; i <= array.length - 1; i++) {
+for (let i =0; i < listItem.length; i++) {
     const li =document.createElement('li');
     const a =document.createElement('a');
     const img =document.createElement('img');
 
-    a.href = array[i].to;
-    a.textContent = array[i].text;
+    a.href = listItem[i].to;
+    a.textContent = listItem[i].text;
 
-    img.src = array[i].img;
-    img.alt = array[i].alt;
+    img.src = listItem[i].img;
+    img.alt = listItem[i].alt;
 
-
-    ul.appendChild(li).appendChild(a).insertAdjacentElement('afterbegin', img);
+    
+    df.appendChild(li).appendChild(a).insertAdjacentElement('afterbegin', img);
 }
+
+ul.appendChild(df);
