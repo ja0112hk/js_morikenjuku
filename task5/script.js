@@ -19,11 +19,11 @@ const listItem = [
 
 function arrayPromise() {
   return new Promise((resolve, reject) => {
-    resolve();
+    resolve(listItem);
   });
 }
 
-arrayPromise().then(() => {
+arrayPromise(listItem).then(() => {
   for (let i = 0; i < listItem.length; i++) {
     const li = document.createElement("li");
     const a = document.createElement("a");
