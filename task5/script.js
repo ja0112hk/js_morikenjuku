@@ -24,16 +24,16 @@ function arrayPromise() {
 }
 
 arrayPromise().then((value) => {
-  for (let i = 0; i < listItem.length; i++) {
+  for (let i = 0; i < value.length; i++) {
     const li = document.createElement("li");
     const a = document.createElement("a");
     const img = document.createElement("img");
 
-    a.href = listItem[i].to;
-    a.textContent = listItem[i].text;
+    a.href = value[i].to;
+    a.textContent = value[i].text;
 
-    img.src = listItem[i].img;
-    img.alt = listItem[i].alt;
+    img.src = value[i].img;
+    img.alt = value[i].alt;
 
     df.appendChild(li).appendChild(a).insertAdjacentElement("afterbegin", img);
   }
