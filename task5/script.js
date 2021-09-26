@@ -23,7 +23,7 @@ function arrayPromise() {
   });
 }
 
-arrayPromise().then((listItem) => {
+arrayPromise().then((value) => {
   for (let i = 0; i < listItem.length; i++) {
     const li = document.createElement("li");
     const a = document.createElement("a");
