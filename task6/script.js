@@ -18,30 +18,27 @@ const listItem = [
 ];
 
 const arrayPromise = () => {
-  return new Promise((resolve, reject) => {
-    resolve(listItem);
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(listItem);
+    }, 3000);
   });
 };
 
 arrayPromise().then((value) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-      for (let i = 0; i < value.length; i++) {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        const img = document.createElement("img");
+  for (let i = 0; i < value.length; i++) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    const img = document.createElement("img");
 
-        a.href = value[i].to;
-        a.textContent = value[i].text;
+    a.href = value[i].to;
+    a.textContent = value[i].text;
 
-        img.src = value[i].img;
-        img.alt = value[i].alt;
+    img.src = value[i].img;
+    img.alt = value[i].alt;
 
-        df.appendChild(li).appendChild(a).insertAdjacentElement("afterbegin", img);
-      }
-      ul.appendChild(df);
-
-    }, 3000);
-  });
+    df.appendChild(li).appendChild(a).insertAdjacentElement("afterbegin", img);
+  }
+  ul.appendChild(df);
 });
+
