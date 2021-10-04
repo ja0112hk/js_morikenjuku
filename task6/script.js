@@ -26,6 +26,10 @@ const arrayPromise = () => {
 };
 
 arrayPromise().then((value) => {
+  insertUl(value);
+});
+
+const insertUl = (value) => {
   for (let i = 0; i < value.length; i++) {
     const li = document.createElement("li");
     const a = document.createElement("a");
@@ -40,5 +44,4 @@ arrayPromise().then((value) => {
     df.appendChild(li).appendChild(a).insertAdjacentElement("afterbegin", img);
   }
   ul.appendChild(df);
-});
-
+}
