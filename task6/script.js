@@ -1,4 +1,4 @@
-const df = document.createDocumentFragment();
+const documentFragment = document.createDocumentFragment();
 
 const ul = document.getElementById("ul");
 
@@ -17,7 +17,7 @@ const listItem = [
   }
 ];
 
-const arrayPromise = () => {
+const getListItem = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(listItem);
@@ -25,7 +25,7 @@ const arrayPromise = () => {
   });
 };
 
-arrayPromise().then((value) => {
+getListItem().then((value) => {
   insertUl(value);
 });
 
@@ -41,7 +41,7 @@ const insertUl = (value) => {
     img.src = value[i].img;
     img.alt = value[i].alt;
 
-    df.appendChild(li).appendChild(a).insertAdjacentElement("afterbegin", img);
+    documentFragment.appendChild(li).appendChild(a).insertAdjacentElement("afterbegin", img);
   }
-  ul.appendChild(df);
+  ul.appendChild(documentFragment);
 }
