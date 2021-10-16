@@ -23,7 +23,7 @@ const getListItem = () => {
 
 // ローディング画像を表示
 const insertLoading = () => {
-  const loading = document.getElementById("loading");
+  const loading = document.getElementById("div");
   const img = document.createElement("img");
   img.src = "loading-circle.gif";
   img.id = "loadingImg";
