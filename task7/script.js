@@ -16,8 +16,10 @@ const listItem = [{
 
 const getListItem = () => {
   return new Promise((resolve) => {
-    resolve(listItem);
     insertLoading();
+    setTimeout(() => {
+      resolve(listItem);
+    }, 3000);
   });
 };
 
@@ -31,12 +33,10 @@ const insertLoading = () => {
 }
 
 getListItem().then((value) => {
-  setTimeout(() => {
-    // ローディング画像を非表示
-    const img = document.getElementById("loadingImg");
-    img.src = "";
-    insertUl(value);
-  }, 3000);
+  // ローディング画像を非表示
+  const img = document.getElementById("loadingImg");
+  img.src = "";
+  insertUl(value);
 });
 
 const insertUl = (value) => {
