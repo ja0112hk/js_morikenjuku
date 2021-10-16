@@ -40,18 +40,18 @@ getListItem().then((value) => {
 });
 
 const insertUl = (value) => {
-  for (let i = 0; i < value.length; i++) {
+  listItem.forEach(function (value) {
     const li = document.createElement("li");
     const a = document.createElement("a");
     const img = document.createElement("img");
 
-    a.href = value[i].to;
-    a.textContent = value[i].text;
+    a.href = value.to;
+    a.textContent = value.text;
 
-    img.src = value[i].img;
-    img.alt = value[i].alt;
+    img.src = value.img;
+    img.alt = value.alt;
 
     documentFragment.appendChild(li).appendChild(a).insertAdjacentElement("afterbegin", img);
-  }
+  });
   ul.appendChild(documentFragment);
 }
