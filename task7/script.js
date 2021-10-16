@@ -32,10 +32,14 @@ const insertLoading = () => {
   loading.appendChild(img);
 }
 
-getListItem().then((value) => {
-  // ローディング画像を非表示
+const removeLoading = () => {
   const img = document.getElementById("loadingImg");
   img.remove();
+}
+
+getListItem().then((value) => {
+  // ローディング画像を非表示
+  removeLoading();
   insertUl(value);
 });
 
