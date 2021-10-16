@@ -26,7 +26,7 @@ const getListItem = () => {
 // ローディング画像を表示
 const insertLoading = () => {
   const loading = document.getElementById("div");
-  const img = document.createElement("img");
+  const img = new Image();
   img.src = "loading-circle.gif";
   img.id = "loadingImg";
   loading.appendChild(img);
@@ -35,7 +35,7 @@ const insertLoading = () => {
 getListItem().then((value) => {
   // ローディング画像を非表示
   const img = document.getElementById("loadingImg");
-  img.src = "";
+  img.remove();
   insertUl(value);
 });
 
