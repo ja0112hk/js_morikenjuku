@@ -14,15 +14,6 @@ const listItem = [{
   text: "メッセージ"
 }];
 
-const getListItem = () => {
-  insertLoading();
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(listItem);
-    }, 3000);
-  });
-};
-
 // ローディング画像を表示
 const insertLoading = () => {
   const loading = document.getElementById("div");
@@ -32,17 +23,13 @@ const insertLoading = () => {
   loading.appendChild(img);
 }
 
+// ローディング画像を非表示
 const removeLoading = () => {
   const img = document.getElementById("loadingImg");
   img.remove();
 }
 
-getListItem().then((value) => {
-  // ローディング画像を非表示
-  removeLoading();
-  insertUl(value);
-});
-
+// リスト作成し、htmlに差し込む
 const insertUl = (value) => {
   listItem.forEach(function (value) {
     const li = document.createElement("li");
@@ -59,3 +46,18 @@ const insertUl = (value) => {
   });
   ul.appendChild(documentFragment);
 }
+
+insertLoading();
+
+const getListItem = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(listItem);
+    }, 3000);
+  });
+};
+
+getListItem().then((value) => {
+  removeLoading();
+  insertUl(value);
+});
