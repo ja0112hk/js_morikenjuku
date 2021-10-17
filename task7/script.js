@@ -31,7 +31,8 @@ const removeLoading = () => {
 
 // リスト作成し、htmlに差し込む
 const insertUl = (value) => {
-  listItem.forEach(function (value) {
+  // listItem.forEach(function (value) {
+  for (value of listItem) {
     const li = document.createElement("li");
     const a = document.createElement("a");
     const img = document.createElement("img");
@@ -43,7 +44,7 @@ const insertUl = (value) => {
     img.alt = value.alt;
 
     documentFragment.appendChild(li).appendChild(a).insertAdjacentElement("afterbegin", img);
-  });
+  };
   ul.appendChild(documentFragment);
 }
 
