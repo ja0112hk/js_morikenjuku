@@ -15,8 +15,8 @@ const listItem = [{
 }];
 
 const getListItem = () => {
+  insertLoading();
   return new Promise((resolve) => {
-    insertLoading();
     setTimeout(() => {
       resolve(listItem);
     }, 3000);
