@@ -2,17 +2,10 @@ const documentFragment = document.createDocumentFragment();
 
 const ul = document.getElementById("ul");
 
-const listItem = [{
-  to: "bookmark.html",
-  img: "1.png",
-  alt: "画像1",
-  text: "ブックマーク"
-}, {
-  to: "message.html",
-  img: "2.png",
-  alt: "画像2",
-  text: "メッセージ"
-}];
+const listItem = [
+  { to: "bookmark.html", img: "1.png", alt: "画像1", text: "ブックマーク" },
+  { to: "message.html", img: "2.png", alt: "画像2", text: "メッセージ" }
+];
 
 // ローディング画像を表示
 const insertLoading = () => {
@@ -47,17 +40,22 @@ const insertUl = (value) => {
   ul.appendChild(documentFragment);
 }
 
-insertLoading();
-
 const getListItem = () => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(listItem);
+      reject(listItem);
     }, 3000);
   });
 };
 
-getListItem().then((value) => {
-  removeLoading();
-  insertUl(value);
-});
+getListItem()
+  .then((value) => {
+    removeLoading();
+    insertUl(value);
+  })
+  .catch((error) => {
+    console.log("エラーが発生しました。")
+  });
+
+insertLoading();
+getListItem();
