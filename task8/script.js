@@ -1,7 +1,3 @@
-const documentFragment = document.createDocumentFragment();
-
-const ul = document.getElementById("ul");
-
 const listItem = [
   { to: "bookmark.html", img: "1.png", alt: "画像1", text: "ブックマーク" },
   { to: "message.html", img: "2.png", alt: "画像2", text: "メッセージ" }
@@ -21,6 +17,9 @@ const removeLoading = () => {
 }
 
 const insertCreatedListToUl = (value) => {
+  const documentFragment = document.createDocumentFragment();
+  const ul = document.getElementById("ul");
+
   value.forEach(function (value) {
     const li = document.createElement("li");
     const a = document.createElement("a");
@@ -32,8 +31,10 @@ const insertCreatedListToUl = (value) => {
     img.src = value.img;
     img.alt = value.alt;
 
+
     documentFragment.appendChild(li).appendChild(a).insertAdjacentElement("afterbegin", img);
   });
+
   ul.appendChild(documentFragment);
 }
 
