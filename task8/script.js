@@ -20,7 +20,7 @@ const removeLoading = () => {
   img.remove();
 }
 
-const insertUl = (value) => {
+const insertCreatedListToUl = (value) => {
   value.forEach(function (value) {
     const li = document.createElement("li");
     const a = document.createElement("a");
@@ -48,7 +48,7 @@ const getListItem = () => {
 getListItem()
   .then((value) => {
     removeLoading();
-    insertUl(value);
+    insertCreatedListToUl(value);
   })
   .catch((error) => {
     console.log(error);
