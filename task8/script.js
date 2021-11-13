@@ -7,7 +7,6 @@ const listItem = [
   { to: "message.html", img: "2.png", alt: "画像2", text: "メッセージ" }
 ];
 
-// ローディング画像を表示
 const insertLoading = () => {
   const loading = document.getElementById("div");
   const img = new Image();
@@ -16,13 +15,11 @@ const insertLoading = () => {
   loading.appendChild(img);
 }
 
-// ローディング画像を非表示
 const removeLoading = () => {
   const img = document.getElementById("loadingImg");
   img.remove();
 }
 
-// リスト作成し、htmlに差し込む
 const insertUl = (value) => {
   value.forEach(function (value) {
     const li = document.createElement("li");
