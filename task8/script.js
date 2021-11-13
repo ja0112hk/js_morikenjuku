@@ -4,11 +4,11 @@ const listItem = [
 ];
 
 const insertLoading = () => {
-  const div = document.getElementById("div");
+  const div = document.getElementById("js-div");
   const img = new Image();
   img.src = "loading-circle.gif";
   img.id = "loadingImg";
-  loading.appendChild(img);
+  div.appendChild(img);
 }
 
 const removeLoading = () => {
