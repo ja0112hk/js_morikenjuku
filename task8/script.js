@@ -43,7 +43,7 @@ const insertUl = (value) => {
 const getListItem = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject(listItem);
+      reject("エラーが発生しました。");
     }, 3000);
   });
 };
@@ -54,7 +54,7 @@ getListItem()
     insertUl(value);
   })
   .catch((error) => {
-    console.log("エラーが発生しました。")
+    console.log(error);
   });
 
 insertLoading();
