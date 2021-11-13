@@ -8,7 +8,7 @@ const listItem = [
 ];
 
 const insertLoading = () => {
-  const loading = document.getElementById("div");
+  const div = document.getElementById("loading");
   const img = new Image();
   img.src = "loading-circle.gif";
   img.id = "loadingImg";
