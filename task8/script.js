@@ -58,4 +58,3 @@ getListItem()
   });
 
 insertLoading();
-getListItem();
